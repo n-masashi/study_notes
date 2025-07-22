@@ -7,7 +7,6 @@ Topics include Python, algorithms, system design, and various other programming 
 
 - 📝 Notes on key concepts
 - 💻 Practice problems
-- 🧪 Mini projects and experiments
   etc...
 
 ## How to Use

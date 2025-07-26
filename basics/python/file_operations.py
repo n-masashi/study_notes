@@ -1,8 +1,53 @@
-# 書き込み
-with open("test.txt", "w") as f:
-    f.write("Hello, file!")
+# ============================================
+# ファイル操作まとめ（読み書き／追記／行操作／例外処理）
+# ============================================
 
-# 読み込み
-with open("test.txt", "r") as f:
-    content = f.read()
-    print(content)  # 出力: Hello, file!
+import os
+
+# --------------------------------------------
+# 1. 書き込み（"w"）: ファイルがなければ作成、あれば上書き
+# --------------------------------------------
+with open("test.txt", "w", encoding="utf-8") as f:
+    f.write("1行目: Hello, file!\n")
+    f.write("2行目: これは書き込みテストです。\n")
+
+# --------------------------------------------
+# 2. 追記（"a"）: ファイルの末尾に追加
+# --------------------------------------------
+with open("test.txt", "a", encoding="utf-8") as f:
+    f.write("3行目: これは追記された内容です。\n")
+
+# --------------------------------------------
+# 3. 読み込み（"r"）: ファイルの中身をすべて表示
+# --------------------------------------------
+if os.path.exists("test.txt"):
+    with open("test.txt", "r", encoding="utf-8") as f:
+        content = f.read()
+        print("全文表示:\n", content)
+else:
+    print("ファイルが存在しません。")
+
+# --------------------------------------------
+# 4. 行ごとに読み込み：1行ずつループ処理
+# --------------------------------------------
+print("\n行ごとの読み込み:")
+try:
+    with open("test.txt", "r", encoding="utf-8") as f:
+        for line in f:
+            print(line.strip())  # 改行を削除して表示
+except FileNotFoundError:
+    print("ファイルが見つかりませんでした。")
+except Exception as e:
+    print("エラーが発生しました:", e)
+
+# --------------------------------------------
+# 5. 書き込み：複数行を一度に書く writelines()
+# --------------------------------------------
+lines = ["1行目: Python\n", "2行目: ファイル操作\n", "3行目: 複数行書き込み\n"]
+with open("multi.txt", "w", encoding="utf-8") as f:
+    f.writelines(lines)
+
+# 確認用出力
+print("\n'multi.txt' の中身:")
+with open("multi.txt", "r", encoding="utf-8") as f:
+    print(f.read())

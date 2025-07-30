@@ -53,3 +53,21 @@ for w in weights:
             dp[j] = min(dp[j], dp[j - w] + 1)
 
 print(dp[x] if dp[x] != INF else "作れない")
+
+
+# --- 4. おもりを無限個使える場合（無制限部分和問題） ---
+# ・おもりは無限に使ってOK
+# ・重さの合計が x になるかどうか判定
+# ・DP配列は dp[j] = 重さ j が作れるかどうか（True/False）
+# ・ループは「前から」（小さい重さから大きい重さへ）進めることが重要
+#   （同じおもりを何度も使うため、更新済みの状態をすぐ活用できる）
+
+dp = [False] * (x + 1)
+dp[0] = True
+
+for w in weights:
+    for j in range(w, x + 1):
+        if dp[j - w]:
+            dp[j] = True
+
+print("Yes" if dp[x] else "No")

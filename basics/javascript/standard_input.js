@@ -1,15 +1,18 @@
+// Node.jsでの標準入力（1行）
 const fs = require("fs");
+const input = fs.readFileSync("/dev/stdin", "utf-8").trim();
+console.log("入力値:", input);
 
-// 複数行を読み込み
-const input = fs.readFileSync("/dev/stdin", "utf-8").trim().split("\n");
+// 複数行の処理
+const lines = input.split("\n");
+for (let i = 0; i < lines.length; i++) {
+    console.log("Line", i + 1, ":", lines[i]);
+}
 
-// 入力例：数値に変換
-const N = Number(input[0]);
-const arr = input[1].split(" ").map(Number);
+// Tips: input.split(" ") で空白区切り、map(Number)で数値変換できる！
 
-console.log(N, arr);
 
-// 競プロテンプレ（よく使う形）
+// テンプレ（よく使う形）
 const lines = input;
 const n = +lines[0];
 for(let i=1; i<=n; i++) {

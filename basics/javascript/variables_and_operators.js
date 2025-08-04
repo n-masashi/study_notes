@@ -1,3 +1,19 @@
+// 変数宣言
+const name = "Alice";      // 定数：変更不可
+let age = 25;              // 変数：変更可能
+var oldVar = "使わない";    // 非推奨（巻き上げなど問題）
+
+// データ型
+let isHappy = true;
+let score = 88.5;
+let fruits = ["apple", "banana"];
+let user = { name: "Bob", age: 30 };
+
+// typeofで型確認
+console.log(typeof age); // number
+
+// Tips: const で宣言しても配列やオブジェクトの「中身」は変更できる！
+
 // const と let の違い
 const PI = 3.14;
 // PI = 3; // エラー: constは再代入不可

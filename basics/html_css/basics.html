@@ -35,6 +35,33 @@
             padding: 1em;
             text-align: center;
         }
+
+        /* 画像の右寄せ例 */
+        figure {
+            float: right;
+            margin: 0 0 1em 1em;
+            max-width: 300px;
+        }
+        figcaption {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+
+        /* 補助コンテンツ用のasideのスタイル */
+        aside {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 1em;
+            margin: 1em 0;
+            font-size: 0.9em;
+        }
+
+        /* ハイライト用のmark */
+        mark {
+            background-color: yellow;
+        }
+
     </style>
 </head>
 <body>
@@ -42,12 +69,20 @@
     <!-- ヘッダー部分 -->
     <header>
         <h1>HTMLとCSSのメモ</h1>
-        <!-- header要素はページの最初の見出しやロゴなどに使う -->
+        <!--
+        <header>：
+        ページやセクションのヘッダー部分を表すタグ。
+        通常、サイトタイトルやロゴ、主要見出しを入れる。
+        -->
     </header>
 
     <!-- ナビゲーション部分 -->
     <nav>
-        <!-- navはリンクメニューなどのナビゲーションに使う -->
+        <!--
+        <nav>：
+        サイト内のナビゲーションメニューを囲むタグ。
+        リンク一覧などユーザーの移動を助ける役割。
+        -->
         <ul>
             <li><a href="#">ホーム</a></li>
             <li><a href="#">記事一覧</a></li>
@@ -57,12 +92,23 @@
 
     <!-- メインコンテンツ -->
     <main>
+        <!--
+        <main>：
+        ページの主要なコンテンツ領域を示すタグ。
+        ページに1つだけ使うのがルール。
+        -->
+
         <section>
+            <!--
+            <section>：
+            ページや文書の区切りを意味するタグ。
+            内容をテーマや目的ごとにまとめる。
+            -->
             <h2>HTMLの基礎</h2>
             <p>
                 HTMLは「構造」を作るための言語。文章の見出し・段落・リンクなどを記述します。
                 <br>
-                例：`<h1>` は大見出し、 `<p>` は段落、 `<a>` はリンク
+                例：<code>&lt;h1&gt;</code> は大見出し、 <code>&lt;p&gt;</code> は段落、 <code>&lt;a&gt;</code> はリンク
             </p>
         </section>
 
@@ -71,26 +117,67 @@
             <p>
                 CSSはデザインを担当する。色、サイズ、レイアウトを指定します。
                 <br>
-                例： `color: red;` で文字色を赤にする
+                例： <code>color: red;</code> で文字色を赤にする
             </p>
         </section>
 
         <section>
             <h2>よく使うタグ</h2>
             <ul>
-                <li><code>&lt;header&gt;</code>：ヘッダー領域</li>
-                <li><code>&lt;nav&gt;</code>：ナビゲーション</li>
-                <li><code>&lt;main&gt;</code>：主なコンテンツ</li>
-                <li><code>&lt;article&gt;</code>：独立した記事</li>
-                <li><code>&lt;section&gt;</code>：セクション分け</li>
-                <li><code>&lt;footer&gt;</code>：フッター</li>
+                <li><code>&lt;header&gt;</code>：ヘッダー領域（タイトルやロゴなど）</li>
+                <li><code>&lt;nav&gt;</code>：ナビゲーションメニュー</li>
+                <li><code>&lt;main&gt;</code>：主要コンテンツ領域（一つだけ）</li>
+                <li><code>&lt;article&gt;</code>：独立した記事や投稿のまとまり</li>
+                <li><code>&lt;section&gt;</code>：テーマごとの区切り（セクション）</li>
+                <li><code>&lt;footer&gt;</code>：フッター領域（著作権など）</li>
+                <li><code>&lt;figure&gt;</code>：画像や図のまとまり（説明文とセット）</li>
+                <li><code>&lt;figcaption&gt;</code>：<code>figure</code>のキャプション（説明文）</li>
+                <li><code>&lt;aside&gt;</code>：補助的な内容（サイドバーや関連記事など）</li>
+                <li><code>&lt;div&gt;</code>：意味を持たない汎用コンテナ（グループ化やレイアウト用）</li>
+                <li><code>&lt;mark&gt;</code>：強調表示（ハイライト）</li>
+                <li><code>&lt;time&gt;</code>：日時や時間の情報を表すタグ</li>
             </ul>
         </section>
+
+        <!-- 例：figureとfigcaptionの使い方 -->
+        <section>
+            <h2>画像の例（figureとfigcaption）</h2>
+            <p>下記は画像と説明をまとめて意味づけした例です。</p>
+            <figure>
+                <img src="https://via.placeholder.com/300x200.png?text=Sample+Image" alt="サンプル画像">
+                <figcaption>これはサンプル画像の説明です。</figcaption>
+            </figure>
+            <p>画像を右寄せにしてテキストが回り込みます。</p>
+        </section>
+
+        <!-- 例：asideの使い方 -->
+        <aside>
+            <strong>補足説明：</strong>  
+            <p>
+                <code>&lt;aside&gt;</code> は主要コンテンツから少し離れた補助的な情報を入れます。  
+                例：広告、関連記事、注釈など。
+            </p>
+        </aside>
+
+        <!-- 例：markとtime -->
+        <section>
+            <h2>その他の便利なタグ</h2>
+            <p>
+                重要な部分を <mark>強調表示</mark> したり、  
+                発表日や日時を <time datetime="2025-08-05">2025年8月5日</time> のように書けます。
+            </p>
+        </section>
+
     </main>
 
     <!-- フッター部分 -->
     <footer>
         <p>&copy; 2025 学習用サイト</p>
+        <!--
+        <footer>：
+        ページやセクションの終わりを示すタグ。
+        著作権表示や免責事項、関連リンクなどを入れることが多い。
+        -->
     </footer>
 
 </body>

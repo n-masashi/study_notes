@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>HTMLとCSSの学習メモ</title>
+    
+    <!-- CSSはここに記述（外部ファイルにしてもOK） -->
+    <style>
+        /* この部分でデザインを調整します */
+
+        /* ヘッダーのスタイル */
+        header {
+            background-color: #f0f0f0;
+            padding: 1em;
+            text-align: center;
+        }
+
+        /* ナビゲーションメニューのスタイル */
+        nav ul {
+            list-style: none; /* 箇条書きの点を消す */
+            padding: 0;
+            display: flex;
+            gap: 1em;
+            justify-content: center;
+        }
+
+        /* メイン部分 */
+        main {
+            padding: 2em;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #eee;
+            padding: 1em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー部分 -->
+    <header>
+        <h1>HTMLとCSSのメモ</h1>
+        <!-- header要素はページの最初の見出しやロゴなどに使う -->
+    </header>
+
+    <!-- ナビゲーション部分 -->
+    <nav>
+        <!-- navはリンクメニューなどのナビゲーションに使う -->
+        <ul>
+            <li><a href="#">ホーム</a></li>
+            <li><a href="#">記事一覧</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <section>
+            <h2>HTMLの基礎</h2>
+            <p>
+                HTMLは「構造」を作るための言語。文章の見出し・段落・リンクなどを記述します。
+                <br>
+                例：`<h1>` は大見出し、 `<p>` は段落、 `<a>` はリンク
+            </p>
+        </section>
+
+        <section>
+            <h2>CSSの基礎</h2>
+            <p>
+                CSSはデザインを担当する。色、サイズ、レイアウトを指定します。
+                <br>
+                例： `color: red;` で文字色を赤にする
+            </p>
+        </section>
+
+        <section>
+            <h2>よく使うタグ</h2>
+            <ul>
+                <li><code>&lt;header&gt;</code>：ヘッダー領域</li>
+                <li><code>&lt;nav&gt;</code>：ナビゲーション</li>
+                <li><code>&lt;main&gt;</code>：主なコンテンツ</li>
+                <li><code>&lt;article&gt;</code>：独立した記事</li>
+                <li><code>&lt;section&gt;</code>：セクション分け</li>
+                <li><code>&lt;footer&gt;</code>：フッター</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- フッター部分 -->
+    <footer>
+        <p>&copy; 2025 学習用サイト</p>
+    </footer>
+
+</body>
+</html>

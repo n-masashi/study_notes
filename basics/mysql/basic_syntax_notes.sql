@@ -77,3 +77,34 @@ SELECT *
 FROM film
 WHERE
    length BETWEEN 85 AND 95;
+
+-- ======================================
+-- 07. 内部結合（INNER JOIN）
+-- ======================================
+
+-- 映画ごとの言語名を取得（film と language テーブルを結合）
+SELECT
+    film.title,
+    language.name AS language_name
+FROM
+    film
+INNER JOIN
+    language
+ON
+    film.language_id = language.language_id;
+
+-- 別の例：books と authors を結合して、本のタイトルと著者名を取得
+SELECT
+    books.title,
+    authors.name AS author_name
+FROM
+    books
+INNER JOIN
+    authors
+ON
+    books.author_id = authors.author_id;
+
+-- 補足：
+-- ・INNER JOIN は、両方のテーブルに共通するデータがある場合のみ結果に表示
+-- ・ON で結合条件を指定
+-- ・JOINの書き方は複数あるが、INNER JOIN が最も基本形

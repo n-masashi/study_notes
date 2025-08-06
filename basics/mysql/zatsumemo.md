@@ -121,3 +121,44 @@ mysql> SELECT *
 +---------+------------------+-----------------------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+
 5 rows in set (0.00 sec)
 ```
+```text
+mysql> SELECT * FROM film LIMIT 5;
++---------+------------------+-----------------------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+
+| film_id | title            | description                                                                                                           | category_id | release_year | rental_duration | rental_rate | length | replacement_cost | rating |
++---------+------------------+-----------------------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+
+|       1 | ACADEMY DINOSAUR | A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies                      |           7 |         1998 |               6 |        0.99 |     86 |            20.99 | PG     |
+|       2 | ACE GOLDFINGER   | A Astounding Epistle of a Database Administrator And a Explorer who must Find a Car in Ancient China                  |           3 |         2001 |               3 |        4.99 |     48 |            12.99 | G      |
+|       3 | ADAPTATION HOLES | A Astounding Reflection of a Lumberjack And a Car who must Sink a Lumberjack in A Baloon Factory                      |           2 |         1995 |               7 |        2.99 |     50 |            18.99 | NC-17  |
+|       4 | AFFAIR PREJUDICE | A Fanciful Documentary of a Frisbee And a Lumberjack who must Chase a Monkey in A Shark Tank                          |        NULL |         1990 |               5 |        2.99 |    117 |            26.99 | G      |
+|       5 | AFRICAN EGG      | A Fast-Paced Documentary of a Pastry Chef And a Dentist who must Pursue a Forensic Psychologist in The Gulf of Mexico |           4 |         1996 |               6 |        2.99 |    130 |            22.99 | G      |
++---------+------------------+-----------------------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+
+5 rows in set (0.00 sec)
+
+mysql>
+mysql> SELECT * FROM category LIMIT 5;
++-------------+-----------+
+| category_id | name      |
++-------------+-----------+
+|           1 | Action    |
+|           2 | Animation |
+|           3 | Children  |
+|           4 | Classics  |
+|           5 | Comedy    |
++-------------+-----------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT *
+    -> FROM film
+    -> INNER JOIN category ON film.category_id = category.category_id
+    -> LIMIT 5;
++---------+------------------+--------------------------------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+-------------+--------+
+| film_id | title            | description                                                                                                                    | category_id | release_year | rental_duration | rental_rate | length | replacement_cost | rating | category_id | name   |
++---------+------------------+--------------------------------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+-------------+--------+
+|      14 | ALICE FANTASIA   | A Emotional Drama of a A Shark And a Database Administrator who must Vanquish a Pioneer in Soviet Georgia                      |           1 |         1976 |               6 |        0.99 |     94 |            23.99 | NC-17  |           1 | Action |
+|      38 | ARK RIDGEMONT    | A Beautiful Yarn of a Pioneer And a Monkey who must Pursue a Explorer in The Sahara Desert                                     |           1 |         2001 |               6 |        0.99 |     68 |            25.99 | NC-17  |           1 | Action |
+|      85 | BONNIE HOLOCAUST | A Fast-Paced Story of a Crocodile And a Robot who must Find a Moose in Ancient Japan                                           |           1 |         1973 |               4 |        0.99 |     63 |            29.99 | G      |           1 | Action |
+|      97 | BRIDE INTRIGUE   | A Epic Tale of a Robot And a Monkey who must Vanquish a Man in New Orleans                                                     |           1 |         1977 |               7 |        0.99 |     56 |            24.99 | G      |           1 | Action |
+|     123 | CASABLANCA SUPER | A Amazing Panorama of a Crocodile And a Forensic Psychologist who must Pursue a Secret Agent in The First Manned Space Station |           1 |         1996 |               6 |        4.99 |     85 |            22.99 | G      |           1 | Action |
++---------+------------------+--------------------------------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+-------------+--------+
+5 rows in set (0.00 sec)
+```

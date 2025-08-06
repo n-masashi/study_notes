@@ -104,3 +104,20 @@ mysql> SELECT *
 +---------+----------------------+-----------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+
 5 rows in set (0.00 sec)
 ```
+```text
+mysql> SELECT *
+    -> FROM film
+    -> WHERE
+    ->     NOT (rating = 'NC-17' OR rating IS NULL)
+    -> LIMIT 5;
++---------+------------------+-----------------------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+
+| film_id | title            | description                                                                                                           | category_id | release_year | rental_duration | rental_rate | length | replacement_cost | rating |
++---------+------------------+-----------------------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+
+|       1 | ACADEMY DINOSAUR | A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies                      |           7 |         1998 |               6 |        0.99 |     86 |            20.99 | PG     |
+|       2 | ACE GOLDFINGER   | A Astounding Epistle of a Database Administrator And a Explorer who must Find a Car in Ancient China                  |           3 |         2001 |               3 |        4.99 |     48 |            12.99 | G      |
+|       4 | AFFAIR PREJUDICE | A Fanciful Documentary of a Frisbee And a Lumberjack who must Chase a Monkey in A Shark Tank                          |        NULL |         1990 |               5 |        2.99 |    117 |            26.99 | G      |
+|       5 | AFRICAN EGG      | A Fast-Paced Documentary of a Pastry Chef And a Dentist who must Pursue a Forensic Psychologist in The Gulf of Mexico |           4 |         1996 |               6 |        2.99 |    130 |            22.99 | G      |
+|       6 | AGENT TRUMAN     | A Intrepid Panorama of a Robot And a Boy who must Escape a Sumo Wrestler in Ancient China                             |          10 |         2002 |               3 |        2.99 |    169 |            17.99 | PG     |
++---------+------------------+-----------------------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+
+5 rows in set (0.00 sec)
+```

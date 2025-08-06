@@ -108,3 +108,37 @@ ON
 -- ・INNER JOIN は、両方のテーブルに共通するデータがある場合のみ結果に表示
 -- ・ON で結合条件を指定
 -- ・JOINの書き方は複数あるが、INNER JOIN が最も基本形
+
+-- ======================================
+-- 08. 外部結合（OUTER JOIN）
+-- ======================================
+
+-- LEFT OUTER JOIN（左外部結合）の例：
+-- すべての本と、あれば著者名を取得（著者が不明でも本は出力される）
+SELECT
+    books.title,
+    authors.name AS author_name
+FROM
+    books
+LEFT OUTER JOIN
+    authors
+ON
+    books.author_id = authors.author_id;
+
+-- RIGHT OUTER JOIN（右外部結合）の例：
+-- すべてのカテゴリと、そこに属する映画（film）があれば表示
+SELECT
+    category.name,
+    film.title
+FROM
+    film
+RIGHT OUTER JOIN
+    category
+ON
+    film.category_id = category.category_id;
+
+-- 補足：
+-- ・LEFT OUTER JOIN：左テーブルを優先し、結合できない右側は NULL で埋める
+-- ・RIGHT OUTER JOIN：右テーブルを優先し、結合できない左側は NULL で埋める
+-- ・OUTER は省略可能（LEFT JOIN / RIGHT JOIN と書くのが一般的）
+-- ・LEFT JOIN は非常によく使われる。RIGHT JOIN は LEFT JOIN に書き換え可能なので、使用頻度は少ない

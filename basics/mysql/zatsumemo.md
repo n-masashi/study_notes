@@ -87,3 +87,20 @@ mysql> SELECT *
 +---------+----------------------+-----------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+
 5 rows in set (0.00 sec)
 ```
+```text
+mysql> SELECT *
+    -> FROM film
+    -> WHERE
+    ->    length >= 85 AND length <= 95
+    -> LIMIT 5;
++---------+----------------------+-----------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+
+| film_id | title                | description                                                                                               | category_id | release_year | rental_duration | rental_rate | length | replacement_cost | rating |
++---------+----------------------+-----------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+
+|       1 | ACADEMY DINOSAUR     | A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies          |           7 |         1998 |               6 |        0.99 |     86 |            20.99 | PG     |
+|      14 | ALICE FANTASIA       | A Emotional Drama of a A Shark And a Database Administrator who must Vanquish a Pioneer in Soviet Georgia |           1 |         1976 |               6 |        0.99 |     94 |            23.99 | NC-17  |
+|      22 | AMISTAD MIDSUMMER    | A Emotional Character Study of a Dentist And a Crocodile who must Meet a Sumo Wrestler in California      |          14 |         2005 |               6 |        2.99 |     85 |            10.99 | NULL   |
+|      23 | ANACONDA CONFESSIONS | A Lacklusture Display of a Dentist And a Dentist who must Fight a Girl in Australia                       |           7 |         1999 |               3 |        0.99 |     92 |             9.99 | R     |
+|      26 | ANNIE IDENTITY       | A Amazing Panorama of a Pastry Chef And a Boat who must Escape a Woman in An Abandoned Amusement Park     |           2 |         1996 |               3 |        0.99 |     86 |            15.99 | G     |
++---------+----------------------+-----------------------------------------------------------------------------------------------------------+-------------+--------------+-----------------+-------------+--------+------------------+--------+
+5 rows in set (0.00 sec)
+```

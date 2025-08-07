@@ -142,3 +142,45 @@ ON
 -- ・RIGHT OUTER JOIN：右テーブルを優先し、結合できない左側は NULL で埋める
 -- ・OUTER は省略可能（LEFT JOIN / RIGHT JOIN と書くのが一般的）
 -- ・LEFT JOIN は非常によく使われる。RIGHT JOIN は LEFT JOIN に書き換え可能なので、使用頻度は少ない
+
+-- ======================================
+-- 09. グループ化（GROUP BY）
+-- ======================================
+
+-- 集計関数と組み合わせて、特定の列でグループ化する
+
+-- 例：言語ごとの映画本数を取得（film テーブル）
+SELECT
+    language_id,
+    COUNT(*) AS film_count
+FROM
+    film
+GROUP BY
+    language_id;
+
+-- 例：著者ごとの本の平均価格（books テーブル）
+SELECT
+    author_id,
+    AVG(price) AS avg_price
+FROM
+    books
+GROUP BY
+    author_id;
+
+-- 例：各カテゴリに属する映画数を取得（JOIN + GROUP BY）
+SELECT
+    category.name,
+    COUNT(film.film_id) AS film_count
+FROM
+    film
+INNER JOIN
+    category
+ON
+    film.category_id = category.category_id
+GROUP BY
+    category.name;
+
+-- 補足：
+-- ・GROUP BY は集計関数（COUNT, SUM, AVG, MAX, MINなど）と併用される
+-- ・GROUP BY の列に含まれていない非集計列は SELECT で使えない（ONLY_FULL_GROUP_BY が有効な場合）
+-- ・HAVING 句を使えば、GROUP BY 後の条件絞り込みが可能（WHERE ではなく）

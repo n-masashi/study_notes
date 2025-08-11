@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>ページタイトル</title>
+  <meta name="description" content="ページの簡単な説明文をここに入れます" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+
+  <!-- header: ヘッダー領域（タイトルやロゴなど） -->
+  <header>
+    <h1>サイトタイトルやロゴ</h1>
+    <!-- nav: ナビゲーションメニュー -->
+    <nav>
+      <ul>
+        <li><a href="/">ホーム</a></li>
+        <li><a href="/about">会社概要</a></li>
+        <li><a href="/contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main: 主要コンテンツ領域（一つだけ） -->
+  <main>
+
+    <!-- article: 独立した記事や投稿のまとまり -->
+    <article>
+      <h2>記事タイトル</h2>
+      <p>記事本文の内容</p>
+
+      <!-- figure: 画像や図のまとまり -->
+      <figure>
+        <img src="/images/sample.jpg" alt="サンプル画像" />
+        <!-- figcaption: figureのキャプション（説明文） -->
+        <figcaption>画像の説明文</figcaption>
+      </figure>
+
+      <!-- mark: 強調表示（ハイライト） -->
+      <p>ここは<mark>重要なポイント</mark>です。</p>
+
+      <!-- time: 日時や時間の情報を表すタグ -->
+      <time datetime="2025-08-11">2025年8月11日</time>
+    </article>
+
+    <!-- section: テーマごとの区切り（セクション） -->
+    <section>
+      <h2>セクションタイトル</h2>
+      <p>このセクションの内容</p>
+    </section>
+
+    <!-- aside: 補助的な内容（サイドバーや関連記事など） -->
+    <aside>
+      <h3>関連記事</h3>
+      <ul>
+        <li><a href="#">関連記事1</a></li>
+        <li><a href="#">関連記事2</a></li>
+      </ul>
+    </aside>
+
+    <!-- form: フォームを表すタグ -->
+    <form action="/submit" method="post">
+      <label for="input1">入力欄1</label>
+      <input id="input1" name="input1" type="text" />
+      <button type="submit">送信</button>
+    </form>
+
+    <!-- div: 意味を持たない汎用コンテナ（グループ化やレイアウト用） -->
+    <div class="layout-container">
+      <p>レイアウト調整などに使う汎用コンテナ</p>
+    </div>
+
+  </main>
+
+  <!-- footer: フッター領域（著作権など） -->
+  <footer>
+    <small>&copy; 2025 Your Company</small>
+  </footer>
+
+  <script src="/scripts/main.js"></script>
+</body>
+</html>

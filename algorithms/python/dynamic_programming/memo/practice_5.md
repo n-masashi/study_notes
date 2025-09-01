@@ -1,4 +1,4 @@
-# 最長背の順区間の長さ (Longest Non-Decreasing Subarray)
+# 最長背の順区間の長さ
 
 ## 問題の整理
 

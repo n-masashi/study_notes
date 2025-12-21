@@ -25,7 +25,7 @@ distance = norm(test_vector - train_vector)
 print(distance)
 ```
 - 数式で表すと：<br>
-![説明](https://github.com/n-masashi/study_notes/blob/main/images/euclidean-distance.png)
+![説明](https://github.com/n-masashi/study_notes/blob/main/programming/images/euclidean-distance.png)
 - 距離が小さいほど学習画像に近い → 同じラベルを予測
 
 ---

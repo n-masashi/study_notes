@@ -1,0 +1,100 @@
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router9
+!
+!
+!
+!
+ip dhcp excluded-address 10.1.0.1
+!
+ip dhcp pool DHCPPOOL
+ network 10.1.0.0 255.255.255.0
+ default-router 10.1.0.1
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX1017D5CW-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 10.1.0.1 255.255.255.0
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ ip address 10.3.0.2 255.255.255.0
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+!
+interface FastEthernet1/0
+ ip address 10.2.0.1 255.255.255.0
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+!
+interface FastEthernet1/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ passive-interface FastEthernet0/0
+ passive-interface FastEthernet1/0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+

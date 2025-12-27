@@ -23,3 +23,6 @@
   ネットワーク構成図
 - startup-config/  
   各ルータ・スイッチのstartup-config
+
+## 構成図
+![](./ccna_basic_total_review_01.png)

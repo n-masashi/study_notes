@@ -17,12 +17,12 @@
 - tracertで想定した経路を通っていることを確認
 
 ## ファイル構成
-- ccna_basic_total_review_01.pkt  
+- total_review_practice01.pkt  
   Packet Tracerファイル
-- ccna_basic_total_review_01.png  
+- total_review_practice01.png  
   ネットワーク構成図
 - startup-config/  
   各ルータ・スイッチのstartup-config
 
 ## 構成図
-![](./ccna_basic_total_review_01.png)
+![](./total_review_practice01.png)
